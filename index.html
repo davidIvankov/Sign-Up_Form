@@ -19,8 +19,10 @@
         <div class="logo">
             <h1>
                 <img src="./icons8-island-on-water-100.png" alt="Island sticker" class="logo_icon">
+            
                 Madeira Island
             </h1>
+            <button id="open_form">Create Account</button>
         </div>
         <div class="form_container">
             <header>
@@ -34,11 +36,23 @@
                 <h3>Let's do this!</h3>
                 <div>
                     <label for="first_name">FIRST NAME</label>
-                    <input type="text" id="first_name" placeholder="Enter your first name" required>
+                    <input 
+                        type="text" 
+                        maxlength="32" 
+                        id="first_name"
+                        placeholder="Enter your first name" 
+                        required
+                    >
                 </div>
                 <div>
                     <label for="last_name">LAST NAME</label>
-                    <input type="text" id="last_name" placeholder="Enter your last name" required>
+                    <input 
+                        type="text" 
+                        maxlength="32" 
+                        id="last_name"                        
+                        placeholder="Enter your last name" 
+                        required
+                    >
                 </div>
                 <div>
                     <label for="email">EMAIL</label>
@@ -46,11 +60,24 @@
                 </div>
                 <div>
                     <label for="phone_number">PHONE NUMBER</label>
-                    <input type="tel" id="phone_number" placeholder="Enter your phone number" required>
+                    <input 
+                        type="tel"  
+                        id="phone_number" 
+                        placeholder="Enter your phone number"
+                        pattern="[0-9]{7,15}"
+                        required
+                    >
                 </div>
                 <div>
                     <label for="password">PASSWORD</label>
-                    <input type="password" id="password" placeholder="Enter your password" class="error" required>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        minlength="8"
+                        placeholder="Enter your password" 
+                        class="error" 
+                        required
+                    >
                     <div id="error_message" class="requirements">*Passwords do not match</div>
                 </div>
                 <div>

@@ -10,6 +10,10 @@ body {
     margin: 25px 0;
 }
 
+#open_form {
+    display: none;
+}
+
 h1 {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -56,7 +60,7 @@ form > div {
 input {
     width: 350px;
     height: 40px;
-    border: 1px solid #dddfe1;
+    border: 1px solid #E5E7EB;
     border-radius: 7px;
     padding: 5px;
 }
@@ -74,7 +78,7 @@ input:valid {
 }
 
 button {
-    background-color: #739F4D;
+    background-color: #596D48;
     color: #FFFFFF;
     font-size: 25px;
     padding: 17px 65px;
@@ -131,4 +135,28 @@ a:hover {
 .error {
     border: none;
     outline: 1px solid red;
+}
+
+@media screen and (max-width:425px) {
+    .container {
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .form_container {
+        display: none;
+    }
+    h1{
+        width: 100vw;
+        margin-right: 0;
+        position: static;
+        text-align: center;
+    }
+    #open_form {
+        display: block;
+    }
+
+    
 }
