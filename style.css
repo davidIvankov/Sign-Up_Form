@@ -128,6 +128,8 @@ a:hover {
 
 .form_container {
     background-color: #F1F2F3;
+    animation-name: slideFromRigth;
+        animation-duration: 1s;
 }
 
 .requirements {
@@ -139,6 +141,15 @@ a:hover {
 .error {
     border: none;
     outline: 1px solid red;
+}
+@keyframes slideFromRigth {
+    0% { transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
 }
 
 @keyframes slideFromBottom {
@@ -152,6 +163,7 @@ a:hover {
 }
 
 @media screen and (max-width:425px) {
+
     .container {
         height: fit-content;
         display: flex;
@@ -163,12 +175,21 @@ a:hover {
     }
 
     .logo {
+        transform: translateY(0);
+        transition: transform .5s;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        
+    }
+
+    .initial_animation {
         animation-name: slideFromBottom;
             animation-duration: 1s;
+    }
+    .animate {
+        transform: translateY(100vh);
     }
     .hidden{
         display: flex;
@@ -185,6 +206,19 @@ a:hover {
     .hidden > p {
         text-align: center;
         
+    }
+
+    .carot_active {
+        display: block;
+        background-color: #000000;
+        width: 100%;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .carot_active:active {
+        background-color: #FFFFFF;
+        color: #000000;
     }
 
     .hide {

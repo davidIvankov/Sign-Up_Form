@@ -4,7 +4,10 @@ let message = document.getElementById("error_message");
 const toggleFormButton = document.getElementById('open_form'),
 form = document.getElementById('form'),
 container = document.getElementById('container'),
-header = document.getElementById('head');
+header = document.getElementById('head'),
+carot = document.getElementById('carot'),
+logo = document.getElementById('logo');
+
 
 
 function validatePassword(){
@@ -27,8 +30,21 @@ password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
 
 toggleFormButton.addEventListener('click',() => {
+
+  carot.classList.add('carot_active')
   container.classList.add('shrink_container')
 header.classList.add('hide')
+logo.classList.add('animate')
+logo.classList.remove('initial_animation')
   form.classList.add('active_form');
+
+})
+
+carot.addEventListener('click',() => {
+  logo.classList.remove('animate')
+  header.classList.remove('hide')
+  form.classList.remove('active_form');
+  container.classList.remove('shrink_container')
+  
 
 })
