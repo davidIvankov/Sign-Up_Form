@@ -1,6 +1,11 @@
 let password = document.getElementById("password");
 let confirm_password = document.getElementById("confirm_password");
 let message = document.getElementById("error_message");
+const toggleFormButton = document.getElementById('open_form'),
+form = document.getElementById('form'),
+container = document.getElementById('container'),
+header = document.getElementById('head');
+
 
 function validatePassword(){
   if(password.value != confirm_password.value) {
@@ -16,5 +21,14 @@ function validatePassword(){
   }
 }
 
+
+
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
+
+toggleFormButton.addEventListener('click',() => {
+  container.classList.add('shrink_container')
+header.classList.add('hide')
+  form.classList.add('active_form');
+
+})
