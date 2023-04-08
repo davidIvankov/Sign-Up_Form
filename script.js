@@ -6,6 +6,10 @@ form = document.getElementById('form'),
 container = document.getElementById('container'),
 header = document.getElementById('head');
 
+let fname = document.getElementById("first_name");
+let lname = document.getElementById("last_name");
+let tel = document.getElementById("phone_number");
+let email = document.getElementById("email");
 
 function validatePassword(){
   if(password.value != confirm_password.value) {
@@ -22,6 +26,20 @@ function validatePassword(){
 }
 
 
+function isSuccess() {
+  if (password.value.length > 0 
+    && fname.value.length > 0 
+    && lname.value.length > 0 
+    && tel.value.length > 0 
+    && email.value.length > 0
+    && password.value == confirm_password.value
+    && email.value.includes('@')){
+        alert('You have registered successfully!');
+
+  }
+  
+  return true;
+}
 
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
