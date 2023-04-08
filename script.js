@@ -37,7 +37,7 @@ function isSuccess() {
     && email.value.length > 0
     && password.value == confirm_password.value
     && email.value.includes('@')){
-        alert('You have registered successfully!');
+        alert(`You have registered successfully!\nfirst name: ${fname.value}\nlast name: ${lname.value}\nphone: ${tel.value}\ne-mail: ${email.value}`);
 
   }
   
