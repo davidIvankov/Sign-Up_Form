@@ -1,6 +1,9 @@
 const password = document.getElementById("password"),
  confirm_password = document.getElementById("confirm_password"),
  message = document.getElementById("error_message"),
+ error_fname = document.getElementById("error_fname"),
+ error_lname = document.getElementById("error_lname"),
+ regName = /^[A-Za-z]+$/,
  toggleFormButton = document.getElementById('open_form'),
 form = document.getElementById('form'),
 container = document.getElementById('container'),
@@ -26,6 +29,27 @@ function validatePassword(){
   }
 }
 
+function validateFirstName(){
+  if(!regName.test(fname.value)){
+    error_fname.innerText = "*Invalid First Name";
+    fname.classList.add("error");
+  } else {
+    fname.classList.remove("error");
+    error_fname.innerText = "";
+  }
+}
+
+function validateLastName(){
+  if(!regName.test(lname.value)){
+    error_lname.innerText = "*Invalid Last Name";
+    lname.classList.add("error");
+  } else {
+    error_lname.innerText = "";
+    lname.classList.remove("error");
+  }
+
+}
+
 
 function isSuccess() {
   if (password.value.length > 0 
@@ -34,7 +58,9 @@ function isSuccess() {
     && tel.value.length > 0 
     && email.value.length > 0
     && password.value == confirm_password.value
-    && email.value.includes('@')){
+    && email.value.includes('@')
+    && regName.test(fname.value)
+    && regName.test(lname.value)){
         alert(`You have registered successfully!\nfirst name: ${fname.value}\nlast name: ${lname.value}\nphone: ${tel.value}\ne-mail: ${email.value}`);
 
   }
@@ -44,6 +70,9 @@ function isSuccess() {
 
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
+
+fname.onchange = validateFirstName;
+lname.onchange = validateLastName;
 
 toggleFormButton.addEventListener('click',() => {
 
