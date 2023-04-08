@@ -1,7 +1,7 @@
-let password = document.getElementById("password");
-let confirm_password = document.getElementById("confirm_password");
-let message = document.getElementById("error_message");
-const toggleFormButton = document.getElementById('open_form'),
+const password = document.getElementById("password"),
+ confirm_password = document.getElementById("confirm_password"),
+ message = document.getElementById("error_message"),
+ toggleFormButton = document.getElementById('open_form'),
 form = document.getElementById('form'),
 container = document.getElementById('container'),
 header = document.getElementById('head'),
@@ -37,7 +37,6 @@ header.classList.add('hide')
 logo.classList.add('animate')
 logo.classList.remove('initial_animation')
   form.classList.add('active_form');
-
 })
 
 carot.addEventListener('click',() => {
@@ -45,6 +44,4 @@ carot.addEventListener('click',() => {
   header.classList.remove('hide')
   form.classList.remove('active_form');
   container.classList.remove('shrink_container')
-  
-
 })
