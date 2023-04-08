@@ -214,6 +214,7 @@ a:hover {
         width: 100%;
         text-align: center;
         color: #FFFFFF;
+        margin-bottom: 20px;
     }
 
     .carot_active:active {

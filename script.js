@@ -6,13 +6,11 @@ form = document.getElementById('form'),
 container = document.getElementById('container'),
 header = document.getElementById('head'),
 carot = document.getElementById('carot'),
-logo = document.getElementById('logo');
-
-
-let fname = document.getElementById("first_name");
-let lname = document.getElementById("last_name");
-let tel = document.getElementById("phone_number");
-let email = document.getElementById("email");
+logo = document.getElementById('logo'),
+ fname = document.getElementById("first_name"),
+ lname = document.getElementById("last_name"),
+ tel = document.getElementById("phone_number"),
+ email = document.getElementById("email");
 
 function validatePassword(){
   if(password.value != confirm_password.value) {
