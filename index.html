@@ -50,7 +50,8 @@
                         type="text" 
                         maxlength="32" 
                         id="first_name"
-                        placeholder="Enter your first name" 
+                        placeholder="Enter your first name"
+                         pattern="[^\d#$%&'()*+,-./:;˛<=>˙´¨¸˝?@[\]^_`{|}~]+"
                         required
                     >
                     <div id="error_fname" class="requirements"></div>
@@ -60,6 +61,7 @@
                     <input 
                         type="text" 
                         maxlength="32" 
+                        pattern="[^\d#$%&'()*+,-./:;˛<=>˙´¨¸˝?@[\]^_`{|}~]+"
                         id="last_name"                        
                         placeholder="Enter your last name" 
                         required

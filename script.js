@@ -3,7 +3,7 @@ const password = document.getElementById("password"),
  message = document.getElementById("error_message"),
  error_fname = document.getElementById("error_fname"),
  error_lname = document.getElementById("error_lname"),
- regName = /^[A-Za-z]+$/,
+ regName = /[^\d#$%&'()*+,-./:;˛<=>˙´¨¸˝?@[\]^_`{|}~]+/,
  toggleFormButton = document.getElementById('open_form'),
 form = document.getElementById('form'),
 container = document.getElementById('container'),
@@ -14,6 +14,7 @@ logo = document.getElementById('logo'),
  lname = document.getElementById("last_name"),
  tel = document.getElementById("phone_number"),
  email = document.getElementById("email");
+
 
 function validatePassword(){
   if(password.value != confirm_password.value) {
@@ -30,37 +31,40 @@ function validatePassword(){
 }
 
 function validateFirstName(){
-  if(!regName.test(fname.value)){
+  if(!regName.test(fname.value) || !fname.value.trim()){
     error_fname.innerText = "*Invalid First Name";
     fname.classList.add("error");
+    fname.setCustomValidity('Invalid Input')
   } else {
     fname.classList.remove("error");
     error_fname.innerText = "";
+    fname.setCustomValidity('')
   }
 }
 
-function validateLastName(){
-  if(!regName.test(lname.value)){
+ function validateLastName(){
+  if(!regName.test(lname.value) || !lname.value.trim()){
+    console.log(realLastName)
     error_lname.innerText = "*Invalid Last Name";
     lname.classList.add("error");
+    lname.setCustomValidity('Invalid Input')
   } else {
     error_lname.innerText = "";
     lname.classList.remove("error");
+    lname.setCustomValidity('');
   }
 
 }
 
 
-function isSuccess() {
-  if (password.value.length > 0 
-    && fname.value.length > 0 
-    && lname.value.length > 0 
-    && tel.value.length > 0 
-    && email.value.length > 0
-    && password.value == confirm_password.value
-    && email.value.includes('@')
-    && regName.test(fname.value)
-    && regName.test(lname.value)){
+function isSuccess(){
+  if (fname.checkValidity() &&
+    lname.checkValidity() &&
+    email.checkValidity() &&
+    tel.checkValidity() &&
+    confirm_password.checkValidity() &&
+    password.checkValidity()
+    ){
         alert(`You have registered successfully!\nfirst name: ${fname.value}\nlast name: ${lname.value}\nphone: ${tel.value}\ne-mail: ${email.value}`);
 
   }
