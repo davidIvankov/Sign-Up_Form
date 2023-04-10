@@ -44,7 +44,6 @@ function validateFirstName(){
 
  function validateLastName(){
   if(!regName.test(lname.value) || !lname.value.trim()){
-    console.log(realLastName)
     error_lname.innerText = "*Invalid Last Name";
     lname.classList.add("error");
     lname.setCustomValidity('Invalid Input')
@@ -65,7 +64,7 @@ function isSuccess(){
     confirm_password.checkValidity() &&
     password.checkValidity()
     ){
-        alert(`You have registered successfully!\nfirst name: ${fname.value}\nlast name: ${lname.value}\nphone: ${tel.value}\ne-mail: ${email.value}`);
+        alert(`You have registered successfully!\nfirst name: ${fname.value.trim().replace((/[\s]+/g),' ')}\nlast name: ${lname.value.trim().replace((/[\s]+/g),' ')}\nphone: ${tel.value}\ne-mail: ${email.value}`);
 
   }
   
