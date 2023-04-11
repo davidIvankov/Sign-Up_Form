@@ -74,8 +74,8 @@ function isSuccess(){
 password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
 
-fname.onchange = validateFirstName;
-lname.onchange = validateLastName;
+fname.onkeyup = validateFirstName;
+lname.onkeyup = validateLastName;
 
 toggleFormButton.addEventListener('click',() => {
 
