@@ -4,6 +4,7 @@ const password = document.getElementById("password"),
  error_fname = document.getElementById("error_fname"),
  error_lname = document.getElementById("error_lname"),
  regName = /^[^\d#$%&'()*+,-./:;˛<=>˙´¨¸˝?@[\]^_`{|}~]+$/,
+ regNum = /[\d]{7,15}/,
  toggleFormButton = document.getElementById('open_form'),
 form = document.getElementById('form'),
 container = document.getElementById('container'),
@@ -13,8 +14,28 @@ logo = document.getElementById('logo'),
  fname = document.getElementById("first_name"),
  lname = document.getElementById("last_name"),
  tel = document.getElementById("phone_number"),
- email = document.getElementById("email");
+ email = document.getElementById("email"),
+ error_email = document.getElementById("error_email"),
+ error_phone = document.getElementById("error_phone");
 
+function validateEmail(){
+  if (!email.checkValidity()) {
+    error_email.innerText = "*Invalid email";
+    email.classList.add("error");
+  } else  {
+    error_email.innerText = ''
+    email.classList.remove("error");
+  }
+ }
+ function validatePhone(){
+   if (!regNum.test(tel.value)) {
+    error_phone.innerText = "*Invalid phone nomber";
+    tel.classList.add("error");
+  } else {
+    tel.classList.remove("error");
+    error_phone.innerText = "";
+  }
+ }
 
 function validatePassword(){
   if(password.value != confirm_password.value) {
@@ -76,6 +97,9 @@ confirm_password.onkeyup = validatePassword;
 
 fname.onkeyup = validateFirstName;
 lname.onkeyup = validateLastName;
+
+email.onchange = validateEmail;
+tel.onkeyup = validatePhone;
 
 toggleFormButton.addEventListener('click',() => {
 

@@ -71,6 +71,7 @@
                 <div>
                     <label for="email">*EMAIL</label>
                     <input type="email" id="email" placeholder="Enter your email address" required>
+                    <div id="error_email" class="requirements"></div>
                 </div>
                 <div>
                     <label for="phone_number">*PHONE NUMBER</label>
@@ -82,6 +83,7 @@
                         title="ex:023555333(numbers only, min 7 digits, max 15)"
                         required
                     >
+                    <div id="error_phone" class="requirements"></div>
                 </div>
                 <div>
                     <label for="password">*PASSWORD</label>
@@ -100,7 +102,7 @@
                         required>
                 </div>
             </form>
-            <button type="submit" form="signup_form" value="submit" onclick="return isSuccess();" />Create Account</button>
+            <button type="submit" form="signup_form" value="submit" onclick="return isSuccess();" >Create Account</button>
             <footer>
                 <span>Already have an account?
                     <a href="#">Log in</a>
