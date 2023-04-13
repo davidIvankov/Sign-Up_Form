@@ -51,45 +51,41 @@ function validatePassword(){
   }
 }
 
-function validateFirstName(){
-  if(!regName.test(fname.value) || !fname.value.trim()){
-    error_fname.innerText = "*Invalid First Name";
-    fname.classList.add("error");
-    fname.setCustomValidity('Invalid Input')
-  } else {
-    fname.classList.remove("error");
-    error_fname.innerText = "";
-    fname.setCustomValidity('')
-  }
+function validateFirstName() {
+    if(!regName.test(fname.value) || !fname.value.trim()) {
+        error_fname.innerText = "*Invalid First Name";
+        fname.classList.add("error");
+        fname.setCustomValidity('Invalid Input');
+    } else {
+        fname.classList.remove("error");
+        error_fname.innerText = "";
+        fname.setCustomValidity('');
+    }
 }
 
- function validateLastName(){
-  if(!regName.test(lname.value) || !lname.value.trim()){
-    error_lname.innerText = "*Invalid Last Name";
-    lname.classList.add("error");
-    lname.setCustomValidity('Invalid Input')
-  } else {
-    error_lname.innerText = "";
-    lname.classList.remove("error");
-    lname.setCustomValidity('');
-  }
-
+ function validateLastName() {
+    if(!regName.test(lname.value) || !lname.value.trim()) {
+        error_lname.innerText = "*Invalid Last Name";
+        lname.classList.add("error");
+        lname.setCustomValidity('Invalid Input');
+    } else {
+        error_lname.innerText = "";
+        lname.classList.remove("error");
+        lname.setCustomValidity('');
+    }
 }
 
-
-function isSuccess(){
-  if (fname.checkValidity() &&
-    lname.checkValidity() &&
-    email.checkValidity() &&
-    tel.checkValidity() &&
-    confirm_password.checkValidity() &&
-    password.checkValidity()
-    ){
-        alert(`You have registered successfully!\nfirst name: ${fname.value.trim().replace((/[\s]+/g),' ')}\nlast name: ${lname.value.trim().replace((/[\s]+/g),' ')}\nphone: ${tel.value}\ne-mail: ${email.value}`);
-
-  }
-  
-  return true;
+function isSuccess() {
+    if (fname.checkValidity() &&
+        lname.checkValidity() &&
+        email.checkValidity() &&
+        tel.checkValidity() &&
+        confirm_password.checkValidity() &&
+        password.checkValidity()
+        ) {
+            alert(`You have registered successfully!\nfirst name: ${fname.value.trim().replace((/[\s]+/g),' ')}\nlast name: ${lname.value.trim().replace((/[\s]+/g),' ')}\nphone: ${tel.value}\ne-mail: ${email.value}`);
+    }
+    return true;
 }
 
 password.onchange = validatePassword;
@@ -102,18 +98,17 @@ email.onchange = validateEmail;
 tel.onkeyup = validatePhone;
 
 toggleFormButton.addEventListener('click',() => {
-
-  carot.classList.add('carot_active')
-  container.classList.add('shrink_container')
-header.classList.add('hide')
-logo.classList.add('animate')
-logo.classList.remove('initial_animation')
-  form.classList.add('active_form');
-})
+    carot.classList.add('carot_active');
+    container.classList.add('shrink_container');
+    header.classList.add('hide');
+    logo.classList.add('animate');
+    logo.classList.remove('initial_animation');
+    form.classList.add('active_form');
+});
 
 carot.addEventListener('click',() => {
-  logo.classList.remove('animate')
-  header.classList.remove('hide')
-  form.classList.remove('active_form');
-  container.classList.remove('shrink_container')
-})
+    logo.classList.remove('animate');
+    header.classList.remove('hide');
+    form.classList.remove('active_form');
+    container.classList.remove('shrink_container');
+});
